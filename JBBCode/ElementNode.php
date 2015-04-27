@@ -17,7 +17,7 @@ class ElementNode extends Node
     protected $tagName;
 
     /** @var string[] The attributes, if any, of this element node */
-    protected $attribute;
+    protected $attributes;
 
     /** @var Node[] The child nodes contained within this element */
     protected $children;
@@ -74,13 +74,13 @@ class ElementNode extends Node
     }
 
     /**
-     * Returns the attribute (used as the option in bbcode definitions) of this element.
+     * Returns the attributes of this element.
      *
      * @return string[] the attributes of this element
      */
-    public function getAttribute()
+    public function getAttributes()
     {
-        return $this->attribute;
+        return $this->attributes;
     }
 
     /**
@@ -124,12 +124,12 @@ class ElementNode extends Node
     public function getAsBBCode()
     {
         $str = "[".$this->tagName;
-        if (!empty($this->attribute)) {
-            if(isset($this->attribute[$this->tagName])) {
-                $str .= "=".$this->attribute[$this->tagName];
+        if (!empty($this->attributes)) {
+            if(isset($this->attributes[$this->tagName])) {
+                $str .= "=".$this->attributes[$this->tagName];
             }
 
-            foreach($this->attribute as $key => $value){
+            foreach($this->attributes as $key => $value){
                 if($key == $this->tagName){
                     continue;
                 }
@@ -201,13 +201,13 @@ class ElementNode extends Node
     }
 
     /**
-     * Sets the attribute (option) of this element node.
+     * Sets the attributes of this element node.
      *
-     * @param string[] $attribute the attribute(s) of this element node
+     * @param string[] $attributes the attributes(s) of this element node
      */
-    public function setAttribute($attribute)
+    public function setAttributes($attributes)
     {
-        $this->attribute = $attribute;
+        $this->attributes = $attributes;
     }
 
     /**

@@ -23,13 +23,13 @@ class HTMLSafeVisitor implements \JBBCode\NodeVisitor
 
 	public function visitElementNode(\JBBCode\ElementNode $elementNode)
 	{
-		$attrs = $elementNode->getAttribute();
+		$attrs = $elementNode->getAttributes();
 		if (is_array($attrs))
 		{
 			foreach ($attrs as &$el)
 				$el = $this->htmlSafe($el);
 
-			$elementNode->setAttribute($attrs);
+			$elementNode->setAttributes($attrs);
 		}
 
 		foreach ($elementNode->getChildren() as $child) {

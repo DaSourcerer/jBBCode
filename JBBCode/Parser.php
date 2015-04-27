@@ -600,7 +600,7 @@ class Parser
         $el->setCodeDefinition($code);
         if (!empty($options)) {
             /* We have an attribute we should save. */
-            $el->setAttribute($options);
+            $el->setAttributes($options);
         }
         $parent->addChild($el);
         return $el;

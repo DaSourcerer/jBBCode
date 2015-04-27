@@ -84,7 +84,7 @@ class CodeDefinition
     public function hasValidInputs(ElementNode $el)
     {
         if ($this->usesOption() && $this->optionValidator) {
-            $att = $el->getAttribute();
+            $att = $el->getAttributes();
 
             foreach($att as $name => $value){
                 if(isset($this->optionValidator[$name]) && !$this->optionValidator[$name]->validate($value)){
@@ -126,7 +126,7 @@ class CodeDefinition
         $html = $this->getReplacementText();
 
         if ($this->usesOption()) {
-            $options = $el->getAttribute();
+            $options = $el->getAttributes();
             if(count($options)==1){
                 $vals = array_values($options);
                 $html = str_ireplace('{option}', reset($vals), $html);
