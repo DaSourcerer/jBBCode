@@ -262,6 +262,7 @@ class CodeDefinition
      * Sets whether or not this CodeDefinition uses the {option}
      *
      * @deprecated
+     * @codeCoverageIgnore
      *
      * @param boolean $bool
      */
@@ -274,6 +275,7 @@ class CodeDefinition
      * Sets whether or not this CodeDefinition allows its children to be parsed as html
      *
      * @deprecated
+     * @codeCoverageIgnore
      *
      * @param boolean $bool
      */
@@ -286,6 +288,7 @@ class CodeDefinition
      * Increments the element counter. This is used for tracking depth of elements of the same type for next limits.
      *
      * @deprecated
+     * @codeCoverageIgnore
      *
      * @return void
      */
@@ -298,6 +301,7 @@ class CodeDefinition
      * Decrements the element counter.
      *
      * @deprecated
+     * @codeCoverageIgnore
      *
      * @return void
      */
@@ -310,6 +314,7 @@ class CodeDefinition
      * Resets the element counter.
      *
      * @deprecated
+     * @codeCoverageIgnore
      */
     public function resetCounter()
     {
@@ -320,6 +325,7 @@ class CodeDefinition
      * Returns the current value of the element counter.
      *
      * @deprecated
+     * @codeCoverageIgnore
      *
      * @return int
      */

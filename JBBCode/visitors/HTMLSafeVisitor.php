@@ -44,7 +44,9 @@ class HTMLSafeVisitor implements \JBBCode\NodeVisitor
 			if (defined('ENT_DISALLOWED'))
 				$options = ENT_QUOTES | ENT_DISALLOWED | ENT_HTML401; // PHP 5.4+
 			else
-				$options = ENT_QUOTES;  // PHP 5.3
+				// @codeCoverageIgnoreStart
+				$options = ENT_QUOTES; // PHP 5.3
+				// @codeCoverageIgnoreEnd
 		}
 
 		return htmlspecialchars($str, $options, 'UTF-8');
